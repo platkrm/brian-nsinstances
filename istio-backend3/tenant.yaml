@@ -1,0 +1,12 @@
+apiVersion: cft.dev/v1alpha1
+kind: Tenant
+metadata: # kpt-merge: /example
+  name: istio-backend3
+  annotations:
+    config.kubernetes.io/local-config: 'true'
+    cft.dev/instance-version: '1'
+spec:
+  roles:
+  - role: admin
+    groups:
+    - bg3-admin@bigco.com
