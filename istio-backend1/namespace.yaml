@@ -8,4 +8,3 @@ metadata: # kpt-merge: /example
     cft.dev/tenant: istio-backend1
   annotations:
     cft.dev.tenant/name: istio-backend1
-    network-type: mesh
