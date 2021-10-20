@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: istio-backend1
+  labels:
+    privilege: standard
+    istio-injection: enabled
+    cft.dev/tenant: istio-backend1
+  annotations:
+    cft.dev.tenant/name: istio-backend1
