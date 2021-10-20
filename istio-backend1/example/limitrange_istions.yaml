@@ -1,5 +1,5 @@
 kind: LimitRange
-metadata: # kpt-merge: example/istions
+metadata:
   name: istions
   namespace: istio-backend1
 apiVersion: v1
