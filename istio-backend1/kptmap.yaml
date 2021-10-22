@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: kptfile.kpt.dev
-  namespace: istio-backend1
-data:
-  name: istio-backend1
