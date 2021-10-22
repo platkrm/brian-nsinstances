@@ -1,6 +1,6 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
-metadata:
+metadata: # kpt-merge: istio-backend1/admin
   name: admin
   namespace: istio-backend1
 roleRef:
