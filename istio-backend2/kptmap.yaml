@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: # kpt-merge: basens/kptfile.kpt.dev
+  name: kptfile.kpt.dev
+  namespace: istio-backend2
+data:
+  name: istio-backend2
