@@ -1,0 +1,35 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: istio-backend1
+  annotations:
+    blueprints.cloud.google.com/title: 'Istio Namespace'
+    cft.dev/base-version: '1'
+    cft.dev/package-version: '1'
+    cft.dev/instance-version: '1'
+upstream:
+  type: git
+  git:
+    repo: 'https://github.com/platkrm/brian-nspackages'
+    directory: /istions
+    ref: v1
+  updateStrategy: resource-merge
+upstreamLock:
+  type: git
+  git:
+    repo: 'https://github.com/platkrm/brian-nspackages'
+    directory: /istions
+    ref: istions/v1
+    commit: 434cc059190f5b34ef16c915395c9eb53db704b4
+info:
+  description: Namespace with Istio sidecars enabled
+  keywords:
+  - tenant
+pipeline:
+  mutators:
+  - image: >-
+      us-west1-docker.pkg.dev/cad-demo-327615/kpt-functions/set-namespace:latest
+  validators:
+  - image: 'gcr.io/kpt-fn/kubeval:v0.1'
+    configMap:
+      ignore_missing_schemas: 'true'
