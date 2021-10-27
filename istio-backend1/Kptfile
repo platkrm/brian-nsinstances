@@ -5,31 +5,32 @@ metadata:
   annotations:
     blueprints.cloud.google.com/title: 'Istio Namespace'
     cft.dev/base-version: '1'
-    cft.dev/package-version: '1'
-    cft.dev/instance-version: '1'
+    cft.dev/instance-version: '2'
+    cft.dev/package-version: '2'
 upstream:
   type: git
   git:
-    repo: 'https://github.com/platkrm/brian-nspackages'
+    repo: https://github.com/platkrm/brian-nspackages
     directory: /istions
-    ref: v1
+    ref: v2
   updateStrategy: resource-merge
 upstreamLock:
   type: git
   git:
-    repo: 'https://github.com/platkrm/brian-nspackages'
+    repo: https://github.com/platkrm/brian-nspackages
     directory: /istions
-    ref: istions/v1
-    commit: 9ae60ee99d1bb5040f139f8c6aece7e034b8654c
+    ref: istions/v2
+    commit: b410802596e90a34af0f59a64ef5c7f06db02e1e
 info:
   description: Namespace with Istio sidecars enabled
   keywords:
   - tenant
 pipeline:
   mutators:
-  - image: >-
-      us-west1-docker.pkg.dev/cad-demo-327615/kpt-functions/set-namespace:latest
+  - image: us-west1-docker.pkg.dev/cad-demo-327615/kpt-functions/set-namespace:latest
   validators:
-  - image: 'gcr.io/kpt-fn/kubeval:v0.1'
+  - image: gcr.io/kpt-fn/kubeval:v0.1
     configMap:
       ignore_missing_schemas: 'true'
+  - image: us-west1-docker.pkg.dev/cad-demo-327615/kpt-functions/validate-rolebinding:latest
+  - image: us-west1-docker.pkg.dev/cad-demo-327615/kpt-functions/validate-resourcequota:latest
