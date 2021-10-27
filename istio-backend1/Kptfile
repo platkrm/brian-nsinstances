@@ -5,22 +5,22 @@ metadata:
   annotations:
     blueprints.cloud.google.com/title: 'Istio Namespace'
     cft.dev/base-version: '1'
-    cft.dev/instance-version: '2'
-    cft.dev/package-version: '2'
+    cft.dev/package-version: '1'
+    cft.dev/instance-version: '3'
 upstream:
   type: git
   git:
     repo: https://github.com/platkrm/brian-nspackages
     directory: /istions
-    ref: v2
+    ref: v1
   updateStrategy: resource-merge
 upstreamLock:
   type: git
   git:
     repo: https://github.com/platkrm/brian-nspackages
     directory: /istions
-    ref: istions/v2
-    commit: 4b8276e8cf9c4ad8ecb713ecd203ab73fdb47519
+    ref: istions/v1
+    commit: 71692122f7577c715523920a2db0288cf69f4247
 info:
   description: Namespace with Istio sidecars enabled
   keywords:
