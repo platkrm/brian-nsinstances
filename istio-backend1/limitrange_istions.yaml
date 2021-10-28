@@ -9,3 +9,7 @@ spec:
     max:
       cpu: '1'
       memory: 1G
+  - type: Pod
+    max:
+      cpu: '4'
+      memory: 4G
