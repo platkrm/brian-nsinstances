@@ -11,14 +11,14 @@ metadata:
 upstream:
   type: git
   git:
-    repo: https://github.com/platkrm/brian-nspackages
+    repo: 'https://github.com/platkrm/brian-nspackages'
     directory: /istions
     ref: main
   updateStrategy: resource-merge
 upstreamLock:
   type: git
   git:
-    repo: https://github.com/platkrm/brian-nspackages
+    repo: 'https://github.com/platkrm/brian-nspackages'
     directory: /istions
     ref: main
     commit: 1d5d3d76acb344239890bf2a3e0354a39c7282a8
@@ -28,7 +28,7 @@ info:
   - namespace
 pipeline:
   mutators:
-  - image: gcr.io/kpt-fn/set-namespace:v0.3.4
+  - image: 'gcr.io/kpt-fn/set-namespace:v0.3.4'
     configPath: package-context.yaml
-  - image: gcr.io/kpt-fn/apply-replacements:v0.1.0
+  - image: 'gcr.io/kpt-fn/apply-replacements:v0.1.0'
     configPath: update-rolebinding.yaml

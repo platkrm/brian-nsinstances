@@ -8,5 +8,7 @@ spec:
   - type: Container
     max:
       cpu: '1'
-    defaultRequest:
-      cpu: 1G
+  - type: Pod
+    max:
+      cpu: '4'
+      memory: 4G
