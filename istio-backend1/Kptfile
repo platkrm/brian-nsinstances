@@ -5,23 +5,23 @@ metadata:
   annotations:
     blueprints.cloud.google.com/title: 'Istio Backend 1'
     cft.dev/base-version: '5'
-    cft.dev/package-version: '1'
+    cft.dev/instance-version: '2'
+    cft.dev/package-version: '2'
     config.kubernetes.io/local-config: 'true'
-    cft.dev/instance-version: '1'
 upstream:
   type: git
   git:
     repo: https://github.com/platkrm/brian-nspackages
     directory: /istions
-    ref: main
+    ref: v2
   updateStrategy: resource-merge
 upstreamLock:
   type: git
   git:
     repo: https://github.com/platkrm/brian-nspackages
     directory: /istions
-    ref: main
-    commit: 3325ccba102f110e5c591f9965c04e3d2062cbfd
+    ref: istions/v2
+    commit: f6300964775d6dc6f3289eb8f88e0411bbf403c7
 info:
   description: Namespace for app backend 1
   keywords:
