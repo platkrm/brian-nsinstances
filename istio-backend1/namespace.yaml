@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: istio-backend1
-  labels:
-    privilege: standard
-    istio-injection: enabled
