@@ -1,0 +1,27 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: backend1
+  annotations:
+    config.kubernetes.io/local-config: "true"
+upstream:
+  type: git
+  git:
+    repo: https://github.com/platkrm/brian-nspackages.git
+    directory: simplens
+    ref: simplens/v0
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/platkrm/brian-nspackages.git
+    directory: simplens
+    ref: simplens/v0
+    commit: 65dbc87c085ead5876b0eef8dfc30ad5fc38eeac
+info:
+  description: Simple namespace
+pipeline:
+  mutators:
+  - image: gcr.io/kpt-fn/set-namespace:v0.4.1
+    configPath: package-context.yaml
+  - image: gcr.io/kpt-fn/apply-replacements:v0.1.1
+    configPath: apply-replacements.yaml
