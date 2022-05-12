@@ -5,5 +5,3 @@ metadata: # kpt-merge: /example
   labels:
     privilege: standard
     istio-injection: enabled
-  annotations:
-    network-type: 'mesh'
