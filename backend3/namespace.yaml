@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: backend3
-  annotations:
-    network-type: mesh
-  labels:
-    istio-injection: enabled
